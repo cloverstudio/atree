@@ -3,17 +3,114 @@
 
   <head>
     <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <style>
       * {
           padding: 0;
           margin: 0;
       }
+      .message{
+        text-align: center;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5em;
+        line-height: 2.0em;
+        letter-spacing: 0.1em;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      li {
+        display: inline;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .message ul li:nth-child(odd) {
+        color: red;
+      }
+
+      .message ul li:nth-child(even) {
+        color: green;
+      }
+      
+      .message .cl span {
+        width: 30px;
+        line-height: 30px;
+        vertical-align: middle;
+      }
+
     </style>
+
+    <script lang="text/javascript">
+    
+      let counter = 1;
+
+      setInterval(() => {
+
+        counter++;
+
+        let myElements = document.querySelectorAll(".message li");
+
+        const evenColor = counter%2 == 0 ? "red" : "green";
+        const oddColor = counter % 2 == 0 ? "green" : "red";
+
+        for (let i = 0; i < myElements.length; i++) {
+
+          if(i % 2 == 0)
+            myElements[i].style.color = evenColor;
+          else
+             myElements[i].style.color = oddColor;
+
+        }
+
+        const fontSize =  counter % 2 == 0 ? "1.0em" : "0.9em";
+
+        let myElements2 = document.querySelectorAll(".message .cl span");
+
+
+        for (let i = 0; i < myElements.length; i++) {
+
+            myElements2[i].style.fontSize = fontSize;
+
+        }
+
+      },500);
+
+    </script>
   </head>
 
   <body onload="run()" style="background:black">
     <canvas id="scene" width="500px" height="500px" style="background:black; display: block; margin: 0 auto"></canvas>
-    <a href="https://github.com/anvaka/atree"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <div class="message">
+      <ul class="mc">
+        <li>S</li>
+        <li>r</li>
+        <li>e</li>
+        <li>t</li>
+        <li>a</li>
+        <li>n</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>B</li>
+        <li>o</li>
+        <li>ž</li>
+        <li>i</li>
+        <li>ć</li>
+      </ul>
+      <div class="cl">🍀🍀 2020 By Clover <span>💖</span><span>💖</span></div>
+    </div>
+    <a href="https://github.com/cloverstudio/atree"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
   </body>
 
 </html>
